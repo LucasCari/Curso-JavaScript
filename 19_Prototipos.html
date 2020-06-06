@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipos</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong>Prototipos</strong></h3>
+    <p>POO: Programación orientada a objetos</p>
+    <ul>
+      <li>Clases:: Es un modelo a seguir</li>
+      <li>Objetos:: Es una instacia de la clase , es decir una representacion física de la clase, Concepto de IDEA de platon, un silla es una idea de la silla en si misma (Class), y una silla física es la rerepesentacion de la idea de la silla en el mundo real (Objeto)</li>
+          <ul>
+            <li>Atributos:: Es una característica o propiedad del objeto (VARIABLES dentro del objeto).</li>
+            <li>Métodos:: Son las acciones que un objeto que puede realizar(son funciones dentro de un objeto)</li>
+          </ul>
+    </ul>
+
+    <p><strong>Funcion contructora</strong></p>
+    <p>Como su nombre lo indica es utilizada para construir una sola Funcion y apartir de ella generar nuevas instacias/objetos</p>
+    
+        
+    
+    
+    
+
+    <script>
+/*         const animales ={
+          nombre: 'Snoopy',
+          sonar(){
+            console.log('Hago sonidos porque estoy vivo');
+          }
+        }
+
+        const animal= {
+          nombre: 'Lola Bunny',
+          sonar(){
+            console.log('Lola es una coneja');
+          }
+        }
+
+
+      console.log(animales);
+      console.log(animal);
+ */
+
+
+        //Funcion contructora .1
+       /*  function Animal (nombre,genero){
+          //atibutos
+          this.nombre = nombre;
+          this.gemero = genero;
+
+          // metodos
+          this.sonar= function(){
+            console.log('Hago sonidos porque estoy vivo');
+          }
+          this.saludar= function(){
+            console.log(`Hola me llamo ${this.nombre}`);
+          }
+        } */
+
+        //Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
+        function Animal (nombre,genero){
+          //atibutos
+          this.nombre = nombre;
+          this.gemero = genero;
+        }
+          // metodos agregados al prototipo de la función constructora
+          Animal.prototype.sonar= function(){
+            console.log('Hago sonidos porque estoy vivo');
+          }
+          Animal.prototype.saludar= function(){
+            console.log(`Hola me llamo ${this.nombre}`);
+          }
+
+        const snoopy = new Animal("Snoopy","Hombre"),
+        lolaBunny = new Animal('Lola Bunny', 'Mujer');
+
+        console.log(snoopy);
+        console.log(lolaBunny);
+
+        snoopy.sonar();
+        snoopy.saludar();
+
+
+
+    </script>
+</body>
+</html>

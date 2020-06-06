@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fundamentos JavaScritp</h1>
+
+    <p>Variable: Almecenador de datos y contenido, las variables tienen un rago de acción, var = Global / let = bloque, actualmente solo se utiliza <strong>let</strong><br><br>
+        El alcance <strong>VAR</strong> es de alcance global lo ubicada en toda la ventana. [console.log(window)] al colocar VAR cumple con la elevación, el cual al llamar dos veces una misma funciíón, elevará la ultima y la quitará deñ bloque y la volverá global.
+        <br><br>
+        <strong>LET</strong> sólo puede ser llamada y existe dentro del bloque en el que fué definido. Un bloque es todo lo que definido dentro de un juego de llaves <strong>{}</strong>, evitamos la elevación.
+    
+    </p>
+
+    <script>
+        var hola = 'Global';
+        let hello = 'Bloque';
+        console.log(hola);
+        console.log(hello);
+        console.log(window.hola);
+        console.log(window.hello);
+
+
+        //ambito bloque
+        console.log('**********************VAR**************************');
+        var musica ='Rock';
+        console.log('Variable música antes del Bloque', musica);
+        {
+            var musica = "pop";
+            console.log('Variable música dentro del bloque', musica);
+        }
+        console.log('Variable música despues del Bloque', musica);
+
+        console.log('***********************LET**************************');
+
+        let musica2 ='Rock';
+        console.log('Variable música antes del Bloque', musica2);
+        {
+            let musica2 = "pop";
+            console.log('Variable música dentro del bloque', musica2);
+        }
+        console.log('Variable música despues del Bloque', musica2);
+    </script>
+</body>
+</html>

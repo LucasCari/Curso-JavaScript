@@ -24,53 +24,55 @@
     
 
     <script>
+      
+       //Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
+       function Animal(nombre, genero) {
+         //atibutos
+         this.nombre = nombre;
+         this.gemero = genero;
+       }
+       // metodos agregados al prototipo de la función constructora
+       Animal.prototype.sonar = function () {
+         console.log('Hago sonidos porque estoy vivo');
+       }
+       Animal.prototype.saludar = function () {
+         console.log(`Hola me llamo ${this.nombre}`);
+       }
 
-//Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
-function Animal (nombre,genero){
-          //atibutos
-          this.nombre = nombre;
-          this.gemero = genero;
-        }
-          // metodos agregados al prototipo de la función constructora
-          Animal.prototype.sonar= function(){
-            console.log('Hago sonidos porque estoy vivo');
-          }
-          Animal.prototype.saludar= function(){
-            console.log(`Hola me llamo ${this.nombre}`);
-          }
+       //HERENCIA PROTOTÁICA
+       function Perro(nombre,genero,tamanio) {
+          this.super = Animal;
+          this.super(nombre, genero);
+          this.tamanio = tamanio;
+       }
 
+       //Perro está HEREDANDO DE ANIMAL
+       Perro.prototype = new Animal();
+       Perro.prototype.constructor = Perro();
 
-          //Herencia prototípica
-          function Perro(nombre, genero,tamanio) {
-            this.super = Animal;
-            this.super(nombre,genero);
-            this.tamanio = tamanio;
-          }
+       //sobreescritura de métodos del Prototipo padre en el hijo
+       Perro.prototype.sonar = function () {
+         console.log('Soy un perro y mi sonido es ladrido');
+       }
+       Perro.prototype.ladrad = function () {
+         console.log('Guau, Guau');
+       }
 
+       const snoopy = new Perro("Snoopy", "Hombre", "Mediano"),
+         lolaBunny = new Animal('Lola Bunny', 'Mujer');
 
-           //Sobre escritura de nétodos del Prototipo padre en el hijo
-          Perro.prototype.sonar
+       console.log(snoopy);
+       console.log(lolaBunny);
 
-          //Perro está heredando de Animal
-          Perro.prototype= new Animal();
-          Perro.prototype.constructor = Perro;
-          
+       snoopy.sonar();
+       snoopy.saludar();
+       snoopy.ladrad();
 
-
-        const snoopy = new Animal("Snoopy","Hombre"),
-        lolaBunny = new Animal('Lola Bunny', 'Mujer');
-
-        console.log(snoopy);
-        console.log(lolaBunny);
-
-        snoopy.sonar();
-        snoopy.saludar();
-
-
-
-
-
-
-    </script>
+        lolaBunny.sonar();
+        lolaBunny.saludar();
+ 
+ 
+ 
+ </script>
 </body>
 </html>

@@ -39,6 +39,24 @@ function Animal (nombre,genero){
             console.log(`Hola me llamo ${this.nombre}`);
           }
 
+
+          //Herencia prototípica
+          function Perro(nombre, genero,tamanio) {
+            this.super = Animal;
+            this.super(nombre,genero);
+            this.tamanio = tamanio;
+          }
+
+
+           //Sobre escritura de nétodos del Prototipo padre en el hijo
+          Perro.prototype.sonar
+
+          //Perro está heredando de Animal
+          Perro.prototype= new Animal();
+          Perro.prototype.constructor = Perro;
+          
+
+
         const snoopy = new Animal("Snoopy","Hombre"),
         lolaBunny = new Animal('Lola Bunny', 'Mujer');
 

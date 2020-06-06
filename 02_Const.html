@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONST</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: medium;
+      line-height: 2em;
+      letter-spacing: 0.03em;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>CONST</h3>
+  <p>Nos permitirá crear variables fijas, a diferencia de <strong>LET</strong> No pueden estar vacias, siempre deben
+    contenter un valor. [const PI=3.1416]</p>
+
+  <p><strong>PRIMITIVOS</strong><br>Se accede directamente al valor declarado, y dichos valores no se alterarán<br>
+  <ul>
+    <li>String</li>
+    <li>number</li>
+    <li>boolean</li>
+    <li>null</li>
+    <li>undefined</li>
+    <li>nan</li>
+  </ul>
+  </p>
+
+  <p><strong>COMPUESTOS</strong><br>Se accede a la referencia del valor (ejempo ajedres: caballo a5 hace referencia al
+    lugar al que debe estar el caballo ni al caballo en si mismo.). Permite que agreguemos o quitemos elementos lo que
+    hará que el valor final pueda cambiar. <br>
+  <ul>
+    <li>object={}</li>
+    <li>array=[]</li>
+    <li>function(){}</li>
+    <li>Class{}</li>
+    <li>undefined</li>
+  </ul>
+  </p>
+
+
+  <h3>OBJETOS</h3>
+  <p>Colección de atributos y valores. Cuando accedemos a ellos no accedemos a su valor sino que accedemos a la
+    referencia de su valor
+    Tienen dos atributos muy importantes <br>
+    <strong>Propiedades:</strong> Son los atributos de un objeto que nos van a brindar y informcón sobre el mismo. Por
+    ejemplo length (longitud) <br>
+    <strong>Metodos:</strong> Son las acciones/funciones que el objeto hace, siempre terminaran con<strong>()</strong>.
+  </p>
+
+  <h3>ARREGLOS</h3>
+  <p>Coleccion de datos.(array) Cuando accedemos a ellos no accedemos a su valor sino que accedemos a la referencia de
+    su valor</p>
+
+
+
+  <script>
+    const PI = 3.1416;
+    console.log(PI);
+
+    let objeto = {
+      name: 'Lucas',
+      age: '29'
+    }
+
+    let colores = ['blanco', 'negro', 'azul'];
+
+    console.log(objeto);
+    console.log(colores);
+
+    objeto.correo = 'ejemplo@ejemplo',
+      colores.push('naranja');
+
+    console.log(objeto);
+    console.log(colores);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Booleans</h3>
+    <p>En JavaScript, un valor <strong>VERDADERO</strong> es un valor que se considera  true/verdadero cuando es evaluado en un contexto Booleano. Todos los valores son verdaderos a menos que se definan como falso (es decir, excepto false, 0, "", null, undefined, y NaN).
+
+        JavaScript usa coerción en los contextos Booleanos.
+        
+        Ejemplos de valores verdaderos en JavaScript (los cuales se traducirán a verdaderos y por lo tanto ejecutarán el bloque condicional if): <br>
+        
+        if (true) <br>
+        if ({})<br>
+        if ([])<br>
+        if (42)<br>
+        if ("foo")<br>
+        if (new Date())<br>
+        if (-42)<br>
+        if (3.14)<br>
+        if (-3.14)<br>
+        if (Infinity)<br>
+        if (-Infinity)</p>
+
+
+        <p>Un valor <strong>FALSO</strong>  (a veces escrito falsey ) es un valor que se considera falso cuando se encuentra en un contexto booleano.
+
+            JavaScript utiliza la conversión de tipos para forzar cualquier valor a un valor booleano en contextos que lo requieren, como condicionales y bucles.<br>
+            if (false)<br>
+            if (null)<br>
+            if (undefined)<br>
+            if (0)<br>
+            if (NaN)<br>
+            if ('')<br>
+            if ("")<br>
+            if (document.all)[1]<br>
+
+
+           <strong> El operador lógico AND, &&</strong>
+            Si el primer objeto es falso, devuelve ese objeto<br>
+            
+            false && "dog"<br>
+            // ↪ false<br><br>
+            
+            0 && "dog"<br>
+            // ↪ 0<br>
+            </p>
+        
+    
+
+
+
+
+    <script>
+    let T = true;
+    let F = false;
+
+    console.log(T, F);
+    console.log(typeof T, typeof F);
+
+    console.log(Boolean(0));
+    console.log(Boolean(-7));
+    console.log(Boolean(''));
+    console.log(Boolean(' '));
+
+    </script>
+</body>
+</html>

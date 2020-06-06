@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Numeros</h3>
+    <p>toFixed() indicará cuantos numero decimales tendrá el numero <br>
+        let c= 7.19; <br>
+        console.log(c.toFixed( 1 )); <br>
+        imprimirá por consola 7.2, ya que <strong>toFixed(1)</strong> solo admitirá un decimal luego del entero y realizara el redondeo, en el caso de colocar <strong>toFixed(5)</strong> mostrará por consola [7.19000]</p>
+    <p><strong>parseInt</strong> Solo devuelve la parte entera del numero, en el caso que tengamos que sumar un numero y un string tambien lo utilizaremos, convertirá la cadena de texto en numero ej: <br>
+        let c= 7.19;
+        let d= "5.6";
+
+        console.log.(c + parseInt(d));
+        =12.79
+    </p>
+    <p><strong>parseFloat</strong> devuelve el numero entero y tambien el flotante indicado</p>
+    <p>Caundo recibimos una información de parte del servidor el texto nos llegará como cadena de texto, por más que esté representado en forma de numero, pordmos comprobarlo utilizando <strong>console.log(typeof c)</strong></p>
+
+
+
+
+    <script>
+        let a= 2;
+        let b= new Number(1);
+        let c= 7.19;
+        let d= "5.6";
+
+        console.log(a,b);
+        console.log(c.toFixed(2));
+        console.log(c.toFixed(5));
+        console.log(parseInt(c));
+        console.log(parseFloat(c));
+        console.log(typeof c, typeof d);
+        console.log(c + parseFloat(d));
+        
+
+
+    </script>
+</body>
+</html>

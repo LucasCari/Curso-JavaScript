@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuración</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong>Destructuración</strong></h3>
+    <p></p>
+    
+    
+
+
+    <script>
+        const numeros = [1,2, 3]
+
+        const[one,two,three]= numeros;
+        console.log(one,two,three);
+        
+        let persona = {
+            nombre: 'Lucas',
+            apellido: 'Cari',
+            edad: 29
+        }
+
+        let {nombre,apellido,edad} = persona;
+        console.log(nombre,apellido,edad);
+
+    </script>
+</body>
+</html>

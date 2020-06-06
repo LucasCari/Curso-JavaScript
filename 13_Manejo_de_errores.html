@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de errores</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong>Manejo de errores</strong></h3>
+    <p></p>
+    
+    
+
+
+    <script>
+        try {
+            console.log('En el try se agrega el código a evaluar');
+        } catch (error) {
+            console.log('captura cualquier error sugido o lanzado en el try');
+        }finally{
+            console.log('el bloque finally se ejecutará siempre al final de un bloque try-catch');
+        }
+
+        console.log('-----------------------------');
+
+        try{
+            let numero = 'y';
+
+            if(isNaN(numero)){
+                throw new Error('El caracter introducido no es un número');
+            }
+                console.log(numero*numero);
+        }catch(error){
+            console.log(`Se produjo el siguiente error ${error}`);
+        }
+    </script>
+</body>
+</html>

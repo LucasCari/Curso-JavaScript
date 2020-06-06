@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiposd de Datos Primitivos y Compuestos</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <p><strong>PRIMITIVOS</strong><br>Se accede directamente al valor declarado, y dichos valores no se alterarán<br> 
+        <ul>
+            <li>String</li>
+            <li>number</li>
+            <li>boolean</li>
+            <li>null</li>
+            <li>undefined</li>
+            <li>nan</li>
+        </ul>
+        </p>
+    
+        <p><strong>COMPUESTOS</strong><br>Se accede a la referencia del valor (ejempo ajedres: caballo a5 hace referencia al lugar al que debe estar el caballo ni al caballo en si mismo.). Permite que agreguemos o quitemos elementos lo que hará que el valor final pueda cambiar.  <br> 
+            <ul>
+                <li>object={}</li>
+                <li>array=[]</li>
+                <li>function(){}</li>
+                <li>Class{}</li>
+                <li>undefined</li>
+            </ul>
+            </p>
+
+        <h3 style="margin-top: 50px;"> CADENAS DE TEXTO</h3>
+        <p>Una cadena de texto es lo que se encuentra encerrado entre comillas dobles o simples "" - ''<br>
+        Cada propiedad en Java Scritp tiene sus propias propiedades y sus propio métodos</p>
+
+
+    <script>
+        //cadenas de texto STRING
+        let names ='Lucas';
+        let username = "cari"
+        let saludo = new String ('Hola Lucas'); //el espacio se considera como un caracter
+        let lorem = '              Ullamco elit amet eiusmod nulla magna laborum nulla elit cupidatat occaecat ad ipsum in. Et minim anim Lorem proident eu cillum. Non est duis est cupidatat tempor cupidatat anim voluptate duis proident magna nisi ullamco.             '
+
+        console.log(names, username, saludo);
+
+        //Metodos
+        console.log(
+            names.toUpperCase(), 
+            username.toLowerCase(), 
+            lorem,
+            lorem.includes('amet'), //preguntamos si en el texto existe la palabra amet por consola imprime TRUE
+            lorem.includes('john'), //preguntamos si en el texto existe la palabra amet por consola imprime FALSE
+            lorem.trim(), //quita los espcacion en blanco al rededor del texto.
+            lorem.split(" "), //cada vez que encuentra un espacio en blanco lo separa con ""
+            lorem.split(',') //cada vez que encuentra una coma(,) realiza la separación.
+            );
+
+
+    </script>
+</body>
+</html>

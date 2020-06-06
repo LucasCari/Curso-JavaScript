@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglos y Objetos</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Arrays & Objects</h3>
+    <p>array = arreglo: [   ]</p>
+    <p>Es una colección de elementos que pueden ser de distintos tipos: numbers, string, boolens. Tambien tienen sus propios métodos.</p>
+        
+    
+
+
+    <script>
+        const a =[];
+        const b = [1, true, 'hello', ['A','B','C',[1,2,3]]];
+        console.log(a);
+        console.log(b);
+        /*la consolea nos devolverá lo siguiente: 
+        (4) [1, true, "hello", Array(3)]
+            0: 1
+            1: true
+            2: "hello"
+            3: (3) ["A", "B", "C"]
+            length: 4
+            __proto__: Array(0)*/
+        console.log(b[2]); //imprimirá solo 'Hello' ya que ocupa la segunda posición 
+        console.log(b[3][2]);// imprimirá la leta C 
+        console.log(b[3][3][0]);// imprimirá la numero 1 
+
+        const c =  Array.of('X', 'Y', 'Z', '9', '8', '7');
+        console.log(c);
+
+        const d = Array(100).fill(false);
+        console.log(d);
+
+        const colores = ['Verde', 'Azul', 'Rojo'];
+        console.log(colores);
+
+        colores.push("negro"); //agregará el color negro al final del array que estamos trabajando 
+        console.log(colores);
+
+        colores.pop(); //Quita el ultimo arreglo del array que estamos trabajando 
+        console.log(colores);
+
+        colores.forEach((el,index) =>{
+            console.log(`<li id="${index}">${el}</li>`); //imprimirá en forma de lista
+        });
+    
+
+    </script>
+</body>
+</html>

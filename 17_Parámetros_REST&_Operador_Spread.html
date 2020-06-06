@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parámetros REST & Operador Spread</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong>Parámetros REST & Operador Spread</strong></h3>
+    <p><strong>REST</strong></p>
+    <p>Son una forma de ir agregando, virtualmente, parametros a una funcion o a una variable, sobre todo cuando no sabemos cuanta inforamción vamos a recibir, pero utilizaremos esa info para desencadenar otros procesos. <br>
+        Para declararlos anteponemos tres puntos [  ...  ] delante del nombre donde están guardados los posibles valores infinitos.</p> 
+
+        <p><strong>Spread</strong></p>
+        <p>Funciona para fusionar dos expresiones, para crear uno nuevo en base a la informacion que obtenemos de las X / Y para formar Z, se utiliza anteponiendo los puntos suspensivos antes de ambos arreglos.</p>
+        
+    
+    
+    
+
+    <script>
+        function sumar (a,b, ...c){
+            let resultado = a+b;
+
+            c.forEach(function(n){
+                resultado+=n
+            });
+            return resultado;
+        }
+
+        console.log(sumar(1,2));
+        console.log(sumar(1,2,3));
+        console.log(sumar(1,2,3,4,5,6,7,8,9));
+
+        let arr1 = [1,2,3,4,5],
+        arr2 = [6,7,8,9,10];
+
+        console.log(arr1,arr2); 
+
+        const arr3 = [...arr1, ...arr2];
+        console.log(arr3);
+
+
+    </script>
+</body>
+</html>

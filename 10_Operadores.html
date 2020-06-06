@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong>Operadores</strong></h3>
+    <p>Operadores Aritmeticos</p>
+    <p>Suma, resta, todo lo que se encuentra enre parentesis, etc. Es lo mismo que aritmetica básica <br>
+
+        let a = 5+5 -10*3 = -20 // Primero resuelve la multiplicacion y luego las sumas y restas. <br>
+
+        El módulo es expresado por %, esto nos devolverá el residuo es decir: 
+        El módulo es expresado por %, esto nos devolverá el residuo es decir: Residuo / Resto. La cantidad que sobra luego de una división (como pasa si un número no puede ser dividido exactamente por otro). Ejemplo: 19 no puede ser dividido exactamente por 5. Lo más cerca que se puede llegar sin pasarse es 3 x 5 = 15, lo cual es 4 menos que 19.
+    </p>
+
+    <p><strong>Operadores Relacionales</strong></p>
+    <p>Son los que nos permiten comparar (<) mayor que, (>) menor que, (>=) mayor igual, (<=) menor o igual, (==) igual igual, (===) triple igual, (!=) diferente de, (!==). <br>
+        (=) : Asignación lo que esta de lado derecho se lo estoy asignando al lado derecho (a = 5) el valor de a es 5 <br>
+        (==) : Comparacion de valores: Comparamos si el valor de A = B, sin depender el tipo de caracter (0 == false [true, ya que ambos tienden a ser falsos]) // ('7' == 7 [true: ya que tanto la cadena de texto como el numero tienen un valor de 7]) <br>
+        (===) : Comparacion de tipo de datos y valores: Es lo ideal, ya que comparamos tanto tipo de datos como su valor (7 === '7' [False: ya que no son el mismo tipo de datos, aunque si tienen el mismo valor asignado.]) <br> (0 == false [false, ya que ambos tienden a ser falsos, pero uno es numero y otro es boolean])
+    </p>
+
+    <p><strong>Operadores de incremento y decremento</strong></p>
+    <p>Nos permitiran incrementar o disminuir el valor de las variables que nosotros deseemos. Tambien se puede multiplicar, dividir, o cualquier operador aritmetico. <br>
+    Para subir los calores por unidad podemos expresarlo ++i (i++ )o --i (i--)</p>
+
+    <p><strong>Operadores Lógicos</strong></p>
+    <p>- Not [!] (no)::Niega, lo que es verdadero lo vuelve falso y viceversa  <br> - Or [||] (ó):: ((9===9)||('9'===9))[TRUE]  Cuando tenga 2 o mas condisiones, con que una sola sea verdadera todo el resultado será <br> - And [&&] (y..):: ((9===9)&&('9'===9))[FALSE] la condisión && necesita que ambas condisiones sean verdaderas para validarlo, de caso contrario será falso</p>
+    
+    
+        
+    
+
+
+    <script>
+        //operadores aritméticos 
+        let a = 5+5 -10*3;
+        let modulo = 5/2;
+        let modulo2 = 5%2; //nos devolvera el residuo de una división es decir 1 (2+2=4 residuo =1)
+
+        console.log('operadores aritméticos');
+        console.log(a);
+        console.log(modulo);
+        console.log(modulo2);
+        console.log('---------------------');
+
+        //Operadores Relacionales
+        console.log('operadores Relacionales');
+        console.log(8>9); // 8 mayor que 9 = false
+        console.log(8<9); // 8 menor que 9 = true
+        console.log(8>=9); // 8 mayor o igual a 9 = False
+        console.log(8<=9); // 8 menor que 9 = true
+        console.log(7<7); // 7 menor que 7 = false
+        console.log(7>=7); // 7 menor o igual que 7 = true
+        console.log('---------------------');
+        
+        console.log('Igual == ');
+        console.log(7==7);
+        console.log("7"==7);
+        console.log("7"===7);
+        console.log('---------------------');
+
+        
+        //Incremento - Decremento
+        let i = 2;
+        //i = i+2;
+        //i+= 3;
+        //operador Unario
+        i++;
+
+        console.log('operadores incremento y decremento');
+        console.log(i);
+        console.log('---------------------');
+
+        //operadores LOGICOS
+        console.log('Operadores Lógicos');
+        console.log(true);
+        console.log(!true); // antponiendo ! volvemos falso el valor 
+        console.log(!false);// antponiendo ! volvemos verdader el valor 
+        console.log((9===9)||('9'===9));
+        console.log((9===9)&&('9'===9)); 
+        
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break & Continue</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong>Break & Continue</strong></h3>
+    <p>Nos ayuda a controlar el flujo d enuestras estructuras de control... Por ejemplo ejemplo probabilidad de drop en l2. <br>
+        [for(let i=0;i < numero . length; i++) ] mientas la vairable [ i ] sea menor que el numero de numero seguirá sumando 1 unidad</p>
+        <p>Break:: contará el código donde le indiquemos.</p>
+        <p>Continue::Saltea la posicion que le indicamos y sigue imprimiendo lo que se encuentra directamente después.</p>
+    
+    
+
+
+    <script>
+        const numero = [1,2,3,4,5,6,7,8,9,0];
+
+        for (let i=0;i<numero.length;i++){
+            if(i===5){
+                break; 
+            }
+            console.log(numero[i]);
+        }
+        console.log('-----');
+
+        for (let i=0;i<numero.length;i++){
+            if(i===5){
+                continue; 
+            }   
+            console.log(numero[i]);
+        }
+
+
+    </script>
+</body>
+</html>

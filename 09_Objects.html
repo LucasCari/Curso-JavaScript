@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Objects</h3>
+    <p>object = objetos { }</p>
+    <p>En JS todo es un objeto [consola::  __proto__ ] <br>
+    Es ideal trabajarlos mediante CONST, para evitar que modifiquemos su valor.<br>
+    Un objeto es una coleccion de llaves valores</p>
+    <h3>Atributos/Propiedades de un objeto</h3>
+    <p>Los atributos son las variables/ propiedades que se encuentran dentro de un objeto.</p>
+    <h3>Funciones (metodos)</h3>
+    <p>A las funciones se les llama métodos. Todas los metodos dentro de un objeto son funciones y todas llevan ()</p>
+    
+        
+    
+
+
+    <script>
+    let a = new String('hola');
+    console.log(a);
+    /*String {"hola"}
+    0: "h"
+    1: "o"
+    2: "l"
+    3: "a"
+    length: 4
+    __proto__: String
+    [[PrimitiveValue]]: "hola"*/
+
+    const b = {}
+    console.log(b);
+
+    const Lucas = {
+        nombre: 'Lucas',
+        apellido: 'Cari',
+        edad: 29,
+        pasatiempos: ['programar'],
+        soltero: true,
+        contacto: {
+            email: 'lucasfedericocari@gmail.com',
+            instagram: '@profoco'
+        },
+        saludar:function(){
+            console.log('hola :)')
+        },
+        decirMINombre:function(){
+            console.log(`Hello my name is ${this.nombre, this.apellido}, i have ${this.edad} years old. Follow me ${this.contacto.instagram}`);
+        }
+    }
+    console.log(Lucas);
+    console.log(Lucas['nombre']); //solo imprimirá el nombre.
+    console.log(Lucas.edad); //Sólo imprimirá el atributo edad.
+    console.log(Lucas.contacto.instagram);
+    Lucas.saludar();// Actibará el console.log que se encuentra en el método saludar
+    Lucas.decirMINombre();
+
+    console.log(Object.keys(Lucas));//imprime en forma de array toda la informacion declara en la const LUCAS
+    console.log(Object.values(Lucas));//impre en forma de array solo los valores declarados
+    console.log(Lucas.hasOwnProperty("nombre")); //consulto si hay alguna propiedad llamada Nombre. TRUE
+    console.log(Lucas.hasOwnProperty("nacimiento")); //consulto si hay alguna propiedad llamada Nacimiento. FALSE
+
+
+    
+
+    </script>
+</body>
+</html>

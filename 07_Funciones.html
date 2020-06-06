@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Funciones: function(){};</h3>
+    <p>Una funcion es un bloque de código autocontenido {}, que se puede definir una vez y ejecutar en cualquier momento.
+        Opcionalmente, una funcion puede aceptar parámetros y devolver un valor. <br>
+        Las funciones en JS son <strong>objetos</strong>, un tipo especial de objetos. <br>
+        Pueden asignarse a un valor, y pueden pasarse como argumento y usarse como un valor de retorno. 
+    <nav>
+        <ul>
+            <li> <strong> Funciones declaradas:</strong> </li>
+                function returnValue(){<br>
+                console.log('uno');<br>
+                }<br>
+                Para que una funcion funcione debemos invocarla. [newFunction();] <br>
+                <br>
+                Puede invocarse en cualquier parte de nuestro código, incluso antes de que la funcion sea declarada.
+                Cuando la invocamos antes de la declaracion se elvará como sucede con las variables globales. <br><br>
+
+            <li><strong> Funciones Expresadas:</strong> </li>
+                const functionExpresada = () => { <br>
+                console.log('esto es una funcion expresada, es decir una funcion que se la ha asignado como valor a una variable, si invocamos esta funcion, antes de su definición JS nos dirá.... "Uncaught ReferenceError: Cannot access "functionExpresada" before initialization"') <br>
+            } <br>
+            functionExpresada();<br><br>
+
+            <li><strong> return:</strong></li>
+                function returnValue(){<br>
+                console.log('uno');<br>
+                return 19;<br>
+                console.log('dos');<br>
+                console.log('tres');<br>
+                return 'la función ha retornado una Cadena de Texto';<br>
+            }<br><br>
+            Solo retornará hasta [ return 19; ], ya que al encontrar la pablara return deja de procesar el resto</function>
+</ul>
+</nav>
+    </p>
+        
+    
+
+
+
+
+    <script>
+        //funcion
+        function newFunction(){
+            console.log('uno');
+            console.log('dos');
+            console.log('tres');
+            console.log('---------');
+        }
+        //invocación de la funcion 
+        newFunction();
+
+        function returnValue(){
+            console.log('uno');
+            return 19;
+            console.log('dos');
+            console.log('tres');
+            return 'la función ha retornado una Cadena de Texto';
+        }
+
+        let funtctioValue = returnValue();
+
+        console.log(funtctioValue);
+        console.log('-----------');
+
+        function saludar(nombre = 'desconocido', edad = 0){
+            console.log(`mi nombre es ${nombre} y tengo ${edad} años.`);
+            console.log('-----------');
+        }
+        saludar(); //mostrará los nombre sindicados en la declaración. 
+        saludar('kenai', 7); //reemplazará los valores reespectivamente.
+        
+
+        //funcion DECLARADA 
+        functioDeclarada();
+
+        function functioDeclarada(){
+            console.log('esto es una función declarada, puede invocarse en cualquier parte de nuestro código, incluso antes de que la funcion sea declarada');
+            console.log('-----------');
+        }
+        functioDeclarada();
+
+
+        //FUNCION EXPRESADA
+        //Función anónima
+        const functionExpresada = () => {
+            console.log('esto es una funcion expresada, es decir una funcion que se la ha asignado como valor a una variable, si invocamos esta funcion, antes de su definición JS nos dirá.... "Uncaught ReferenceError: Cannot access "functionExpresada" before initialization"')
+        }
+        functionExpresada();
+
+        
+
+    </script>
+</body>
+</html>

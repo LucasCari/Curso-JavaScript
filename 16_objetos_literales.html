@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuración</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong>Objetos literales</strong></h3>
+    <p></p>
+    
+    
+
+
+    <script>
+     let nombre = "Rocko",
+     edad = 7;   
+        
+        
+     const perro ={
+            nombre: nombre,
+            edad: edad,
+            ladrar: function(){
+                console.log('guau!')
+            }
+        }
+
+        console.log(perro);
+        perro.ladrar()
+
+        const dog = {
+            nombre,
+            edad,
+            raza: 'callejero',
+            aullar(){
+                console.log('auuu, auuuuu, auuuu!!!')
+            }
+        }
+        console.log(dog);
+
+    </script>
+</body>
+</html>

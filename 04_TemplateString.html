@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teplate String</title>
+</head>
+<body>
+    <h3><strong>Concatenacion</strong></h3>
+    <p>Contactenar significa unir una cadena de texto con una variable (generalmente de tipo cadena) <br><br>
+        [let saludo = 'Hola, mi nombre es '+ nombre + ' ' + apellido+'.';]</p>
+
+    <h3><strong>Interpolación</strong></h3>
+    <p>Meter dentro de una cadena de texto el valor dinámicamente de una variable haciendo uso de Template String. El valor de la variable debe colocarse dentro de ``(alt+96 = acento invertido) <br><br>
+        let saludo2 = `Hola mi nombr es ${nombre} ${apellido}.`</p>
+
+        
+
+
+
+
+    <script>
+        let nombre= 'Lucas';
+        let apellido= 'Cari';
+
+        //concatenacion
+        let saludo = 'Hola, mi nombre es '+ nombre + ' ' + apellido+'.';
+        console.log(saludo);
+
+        //interpolacion de Variables
+        let saludo2 = `Hola mi nombr es ${nombre} ${apellido}.`
+        console.log(saludo2);
+
+        let ul = '<ul><li>Verano</li><li>Otoño</li><li>Invierno</li><li>Primavera</li></ul>';
+        console.log(ul);
+
+        let ul2 =`
+            <ul>
+                <li>Verano</li>
+                <li>Otoño</li>
+                <li>Invierno</li>
+                <li>Primavera</li>
+            </ul>
+            `;
+        console.log(ul2);
+
+        </script>
+</body>
+</html>

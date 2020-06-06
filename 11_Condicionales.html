@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras se control Condicionales</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong>Estructuras de Control</strong></h3>
+    <p>Permite controlar el flujo de nuestra programación. Nos permitirán tomar ciertas acciones o no; dependiendo de la evaluacion de una condision ((9===9)||(9==='9))</p>
+    <ul>
+        <li>Secuenciales:: una detras de la otra</li>
+        <li>Estructuras condicionales: dependden de si se cumple o no una condisión</li>
+        <li>Loops: Repetititvas</li>
+    </ul>
+    
+    <h2><Strong>Condicionales</Strong></h2>
+    
+    <h3><strong>IF{}else{}</strong> [IF{X}] Si se cumple la condición ejecutara "X", [ELSE{Y}] Pero sino cumplirá "Y"</h3> 
+    <h3><strong>IF{}else{} anidados</strong>::</h3>
+    <p>if(hora>=0&&hora<=5){ <br>
+        console.log("Dejame dormir");<br>
+    }else if(hora>=6&&hora<=11){<br>
+        console.log('Buenos días');<br>
+    }else if(hora>=12&&hora<=18){<br>
+        console.log('Buenas tardes');<br>
+    }else{<br>
+        console.log('Buenas noches')<br>
+    } </p>
+    
+    <h3><strong>Operador Ternario</strong>::</h3>
+    <p>Solo se puede ejecutar una sola línea de código, es decir que sirve como un IF.else pero en una sola linea. En el caso de tener mas de una condision se deberá utilizar <strong>if else anidados</strong>. <br>
+        (condición) ? verdadero:flaso <br>
+        let eresMayor=(edad>=18)?'Eres mayor de edad':'eres menor de edad';</p>
+        
+        
+        <h3><strong>switch-case</strong>::</h3>
+        <p>Sirve para cuando tenemos que evaluar diferentes valores para una misma variable <br>
+            switch (key) {                             [Key= variable] <br>
+                case 0:                                   [Variable a analizar (0); Doble punto es { apertura de llave] <br>
+                    console.log('Domingo');<br>
+                    break;                                [ } llave de cierre del analisis incial ] <br>
+            
+                default:                                  [En el caso que las condiciones que informamos no existan]      <br>
+                    console.log('El dia no existe');<br>
+                break;<br>
+            }
+        </p>
+        
+        
+        
+        
+    
+
+
+    <script>
+      //estructuas de control
+      //if else
+      let edad= 17;
+
+      if(edad > 17){
+          console.log('eres mayor de edad');
+      }else{
+          console.log('eres menor de edad');
+      }
+
+      if(edad >= 18){
+          console.log('eres mayor de edad');
+      }else{
+          console.log('eres menor de edad');
+      }
+
+      if (edad < 18){
+          console.log('eres menor de edad');
+      }else{
+          console.log('eres mayor de edad');
+      }
+
+      //if else if else
+      console.log('if anidados');
+
+      /* 
+      Buenos dias 6hrs-11hrs
+      Buenas tardes 12hrs-18hrs
+      Buenas noches 19hrs-23hrs
+      Dejame dormir 0hrs-5hrs 
+      */
+
+      let hora = 23;
+      if(hora>=0&&hora<=5){
+          console.log("Dejame dormir");
+      }else if(hora>=6&&hora<=11){
+          console.log('Buenos días');
+      }else if(hora>=12&&hora<=18){
+          console.log('Buenas tardes');
+      }else{
+          console.log('Buenas noches')
+      }
+
+      //operador Ternario
+      console.log('OPERADOR TERNARIO');
+      let eresMayor=(edad>=18)//condición
+      ?'Eres mayor de edad'//verdadero
+      :'eres menor de edad';//falso
+      console.log(eresMayor);
+
+      //switch case
+      /*
+      Domingo:0
+      Lunes:1
+      Martes:2
+      Miercoles:3
+      Jueves:4
+      Viernes:5
+      sabado:6
+      */
+     let dia = 5;
+
+     switch (dia) {
+         case 0:
+             console.log('Domingo');
+             break;
+        case 1: 
+        console.log('Lunes');
+        break;
+        case 2: 
+        console.log('Martes');
+        break;
+        case 3: 
+        console.log('Miercoles');
+        break;
+        case 4: 
+        console.log('Jueves');
+        break;
+        case 5: 
+        console.log('Viernes');
+        break;
+        case 6: 
+        console.log('Sabado');
+        break;
+         default:
+             console.log('El dia no existe')
+             break;
+     }
+
+
+    </script>
+</body>
+</html>

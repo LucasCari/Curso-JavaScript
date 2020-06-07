@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+        span{
+          color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+    <h3> <strong> Class</strong></h3>
+    <p>Azucar sintáctico:</p>
+    <p>Las clases no reciben parámetros, para poder resivirlos estas cuentan con un metodo llamado [ <strong>constructor]</strong> <br>
+    class Animal{ <br>
+    constructor(nombre, genero){ <br>
+    this.nombre = nombre; <br>
+    this.gemero = genero; <br>
+    } <br>
+    // metodos agregados al prototipo de la función constructora <br>
+    sonar(){ <br>
+    console.log('Hago sonidos porque estoy vivo'); <br>
+    } <br>
+    
+    saludar() { <br>
+    console.log(`Hola me llamo ${this.nombre}`); <br>
+    } <br>
+    } <br><br>
+  
+  
+  Las clases son herramientas que nos permitirán facilita la escritura de código. <br>
+class Perro extends Animal{}:: La clse perro heredará de la clase animal las propiedades. [la palabra reservada es <strong>extends</strong> para indicar herencia y luego colocamos de quien los heredará, en este caso es [ <strong>Animal</strong> ] de la misma. br 
+
+class Perro extends Animal{
+constructor (nombre, genero, tamanio);  <span>constructor es quien le dará los parámetros a PERRO</span> <br>
+super(); <span>LLama al constructor d ela clase padre</span>
+}</p>
+   
+    
+        
+    
+    
+    
+
+    <script>
+      
+/*        //Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
+       function Animal(nombre, genero) {
+         //atibutos
+         this.nombre = nombre;
+         this.gemero = genero;
+       }
+       // metodos agregados al prototipo de la función constructora
+       Animal.prototype.sonar = function () {
+         console.log('Hago sonidos porque estoy vivo');
+       }
+       Animal.prototype.saludar = function () {
+         console.log(`Hola me llamo ${this.nombre}`);
+       }
+
+       //HERENCIA PROTOTÁICA
+       function Perro(nombre,genero,tamanio) {
+          this.super = Animal;
+          this.super(nombre, genero);
+          this.tamanio = tamanio;
+       }
+
+       //Perro está HEREDANDO DE ANIMAL
+       Perro.prototype = new Animal();
+       Perro.prototype.constructor = Perro();
+
+       //sobreescritura de métodos del Prototipo padre en el hijo
+       Perro.prototype.sonar = function () {
+         console.log('Soy un perro y mi sonido es ladrido');
+       }
+       Perro.prototype.ladrad = function () {
+         console.log('Guau, Guau');
+       }
+
+       const snoopy = new Perro("Snoopy", "Hombre", "Mediano"),
+         lolaBunny = new Animal('Lola Bunny', 'Mujer');
+
+       console.log(snoopy);
+       console.log(lolaBunny);
+
+       snoopy.sonar();
+       snoopy.saludar();
+       snoopy.ladrad();
+
+        lolaBunny.sonar();
+        lolaBunny.saludar(); */
+
+        class Animal{
+          constructor(nombre, genero){
+            this.nombre = nombre;
+            this.gemero = genero;
+          }
+          // metodos agregados al prototipo de la función constructora
+          sonar(){
+            console.log('Hago sonidos porque estoy vivo');
+          }
+          
+          saludar() {
+            console.log(`Hola me llamo ${this.nombre}`);
+          }
+        }
+
+        class Perro extends Animal{
+          constructor (nombre, genero, tamanio){
+            super();
+            this.tamanio = tamanio;
+        }
+        sonar(){
+          console.log('soy un perro y mi sonido es un ladrido');
+        }
+        ladrar(){
+          console.log('guau, guauuu!');
+        }
+        }
+ 
+        const mimi = new Animal ('Mimy', 'Hembra');
+        const scooby = new Perro ('Scooby', 'Macho', 'Gigant');
+
+        console.log(mimi);
+        mimi.saludar();
+        mimi.sonar();
+        console.log(scooby);
+        scooby.saludar();
+        scooby.sonar();
+        scooby.ladrar();
+
+          
+ 
+ 
+ </script>
+</body>
+</html>

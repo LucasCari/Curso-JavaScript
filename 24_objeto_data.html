@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objeto Data</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      line-height: 2em;
+      letter-spacing: 0.03em;
+    }
+
+    span {
+      color: darkslategray;
+    }
+  </style>
+</head>
+
+<body>
+  <h3> <strong> Obejto data</strong></h3>
+  <p></p>
+
+
+
+
+
+  <script>
+    console.log(Date());
+
+    let fecha = new Date();
+
+    console.log(fecha);
+    //Solo imprime el N° del día
+    console.log(fecha.getDate());
+    //Posisión del dia de la semana (D L M M J V = 0 1 2 3 4 5 6)
+    console.log(fecha.getDay());
+    // Posisión del mes Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic = 0 1 2 3 4 5 6 7 8 9 10 11 
+    console.log(fecha.getMonth());
+    // Imprime solo el año
+    console.log(fecha.getFullYear());
+    //Imprimimos la hora
+    console.log(fecha.getHours());
+    //Imprimimos minutos
+    console.log(fecha.getMinutes());
+    // Impirmimos segundos.
+    console.log(fecha.getSeconds());
+    //Imprimimos en milisegundos
+    console.log(fecha.getMilliseconds());
+    //Imprimimos toda la información en cadena de texto fecha y hora
+    console.log(fecha.toString());
+    //Imprimimos toda la información en cadena de texto fecha y hora en formato local (argentina)
+      console.log(fecha.toLocaleDateString());
+    //Imprimimos la fecha en forma de String.
+     console.log(fecha.toDateString());
+    //imprimimos solo la fecha local
+     console.log(fecha.toLocaleDateString());
+    //imprimimos solo la hora loca
+    console.log(fecha.toLocaleTimeString());
+    //uso horario en el que me encuentro (-3hs = 180 minutos)
+    console.log(fecha.getTimezoneOffset());
+    //Imprimimos hora meridiano 0
+    console.log(fecha.getUTCHours());
+
+    //imprimo mi fecha de cumpleaños
+    let cumpleLucas = new Date (1991, 2, 6);
+    console.log(cumpleLucas);
+
+
+
+
+  </script>
+</body>
+
+</html>

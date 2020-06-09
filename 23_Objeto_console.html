@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objeto console</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      line-height: 2em;
+      letter-spacing: 0.03em;
+    }
+
+    span {
+      color: darkslategray;
+    }
+  </style>
+</head>
+
+<body>
+  <h3> <strong> Obejto console</strong></h3>
+  <p></p>
+
+
+
+
+
+  <script>
+    console.log('Registro de lo que ha pasado en nuestr app');
+    console.error('esto es un error');
+    console.warn('esto es un aviso')
+    console.info('Esto es un mensaje informativo');
+
+    let nombre = 'Lucas',
+      apellido = 'Cari',
+      edad = 29;
+
+    console.log(nombre, apellido, edad);
+
+    console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad}`);
+
+    console.log(`Hola mi nombre es %s %s y tengo %d`, nombre, apellido, edad);
+
+    console.clear(); // Limpia la consola
+
+    console.log(document); //Representación del html en JavaScript
+
+    console.dir(window);  // Muestra todos los metodos y propiedades del obtejo window 
+
+    console.dir(document);  // Nos muestras todos la informcion, atributos, métodos, absolutamente todo del HTML.
+
+    console.group('Cursos de JS en You Tube'); // crea un grupo para la consola.
+    console.log('Cursos de NodeJS');
+    console.log('Cursos de ReactJS');
+    console.groupEnd();
+
+
+    console.log(console);
+    console.table(Object.entries(console).sort()); //creamos una tabla en la consola y la ordenamos alfabeticamente con sort()
+
+    const numeros = [1, 2, 3, 4, 5],
+      vocales = ['a', 'e', 'i', 'o', 'u'];
+
+    console.table(numeros);
+    console.table(vocales);
+
+    const perro = {
+      nombre: 'Bonnie',
+      raza: 'Boxer',
+      color: 'cafe',
+    }
+    console.table(perro);
+
+    console.time('Cuanto tiempo tarda mi código'); //comprobamos cuanto tarda nuestro código en ejecutarse
+    const arreglo = Array(1000000);
+
+    for (let i = 0; i < Array.length; i++) {
+      Array[i]= i;
+    }
+    console.timeEnd('Cuanto tiempo tarda mi código');
+
+ 
+  for (let i = 0; i <= 100; i++) {
+    console.count('código for');
+    console.log(i);
+  }
+
+  console.clear();
+
+  let x = 3, 
+  y = 2,
+  pruebaXY = 'Se espera que X siempre sea menor que Y';
+//Comprobamos que x es menor que Y, si lo es no pasa nada, pero sino tira erre por consola
+  console.assert(x<y, {x, y, pruebaXY});
+
+
+  </script>
+</body>
+
+</html>

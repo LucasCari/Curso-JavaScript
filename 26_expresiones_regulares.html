@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expresiones Regulares</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      line-height: 2em;
+      letter-spacing: 0.03em;
+    }
+
+    span {
+      color: darkslategray;
+    }
+  </style>
+</head>
+
+<body>
+  <h3> <strong> Expresiones Regulares</strong></h3>
+  <p>Secuencia de carácteres que forman un patrón de busqueda, principalmente utilizados para la busqueda de cadenas de texto</p>
+
+
+
+
+
+  <script>
+
+  let cadena = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, doloribus ad praesentium sint dolorum laudantium iste molestiae consequatur? Asperiores ea aperiam ullam itaque minima non eos dignissimos, nobis impedit voluptas!';
+
+/*   let expReg = new RegExp('lorem', 'ig'); */
+  let expReg2 = /\d/i;
+
+  console.log(expReg.test(cadena));
+  console.log(expReg.exec(cadena));
+  console.log(expReg2.test(cadena));
+  console.log(expReg2.exec(cadena));
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,156 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Métodos estáticos, getters y setters</title>
-    <style>
-        body{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1em;
-            line-height: 2em;
-            letter-spacing: 0.03em;
-        }
-        span{
-          color: darkslategray;
-        }
-    </style>
-</head>
-<body>
-    <h3> <strong> Class</strong></h3>
-    <p>Todas las clases son publicas, no pueden volverse privadas.</p>
-  
-    <h3>Metodo Estático</h3>
-<p>Sin la necesidad de haber creado un objeto llamado Perro, podemos llamarlo si lo definimos en la clase como métdo estático</p>    
 
-<h3>setters & getters</h3>
-<p>Nos permiten establecer y obtener el valor de una atributo que existe en nuestra clase pero que como tal, pero al momento de crarlo no le hemos definido</p>
-<p>Metodo obtenedor: 
-  get getRaza(){ <span>Para indicar que es una obtener colocamos get antes de la palabra y junto a ella </span><br> 
-  return this.raza; <br>
-  }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Métodos estáticos, getters y setters</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      line-height: 2em;
+      letter-spacing: 0.03em;
+    }
+
+    span {
+      color: darkslategray;
+    }
+  </style>
+</head>
+
+<body>
+  <h3> <strong> Class</strong></h3>
+  <p>Todas las clases son publicas, no pueden volverse privadas.</p>
+
+  <h3>Metodo Estático</h3>
+  <p>Sin la necesidad de haber creado un objeto llamado Perro, podemos llamarlo si lo definimos en la clase como métdo
+    estático</p>
+
+  <h3>setters & getters</h3>
+  <p>Nos permiten establecer y obtener el valor de una atributo que existe en nuestra clase pero que como tal, pero al
+    momento de crarlo no le hemos definido</p>
+  <p>Metodo obtenedor:
+    get getRaza(){ <span>Para indicar que es una obtener colocamos get antes de la palabra y junto a ella </span><br>
+    return this.raza; <br>
+    }
 
   <p>Metodo obtenedor:
     get getRaza(){ <span>Para indicar que es una obtener colocamos get antes de la palabra y junto a ella </span><br>
     return this.raza; <br>
     }
-</p>
-<p>Para poder utilizarlos luego de definirlos los trataermos como atributos.</p>
-        
+  </p>
+  <p>Para poder utilizarlos luego de definirlos los trataermos como atributos.</p>
+
+
+
+
+
+  <script>
+
+    /*        //Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
+           function Animal(nombre, genero) {
+             //atibutos
+             this.nombre = nombre;
+             this.gemero = genero;
+           }
+           // metodos agregados al prototipo de la función constructora
+           Animal.prototype.sonar = function () {
+             console.log('Hago sonidos porque estoy vivo');
+           }
+           Animal.prototype.saludar = function () {
+             console.log(`Hola me llamo ${this.nombre}`);
+           }
     
+           //HERENCIA PROTOTÁICA
+           function Perro(nombre,genero,tamanio) {
+              this.super = Animal;
+              this.super(nombre, genero);
+              this.tamanio = tamanio;
+           }
     
+           //Perro está HEREDANDO DE ANIMAL
+           Perro.prototype = new Animal();
+           Perro.prototype.constructor = Perro();
     
+           //sobreescritura de métodos del Prototipo padre en el hijo
+           Perro.prototype.sonar = function () {
+             console.log('Soy un perro y mi sonido es ladrido');
+           }
+           Perro.prototype.ladrad = function () {
+             console.log('Guau, Guau');
+           }
+    
+           const snoopy = new Perro("Snoopy", "Hombre", "Mediano"),
+             lolaBunny = new Animal('Lola Bunny', 'Mujer');
+    
+           console.log(snoopy);
+           console.log(lolaBunny);
+    
+           snoopy.sonar();
+           snoopy.saludar();
+           snoopy.ladrad();
+    
+            lolaBunny.sonar();
+            lolaBunny.saludar(); */
 
-    <script>
-      
-/*        //Función constructora donde asignamos los métodos al Prototipo, no a la función como tal
-       function Animal(nombre, genero) {
-         //atibutos
-         this.nombre = nombre;
-         this.gemero = genero;
-       }
-       // metodos agregados al prototipo de la función constructora
-       Animal.prototype.sonar = function () {
-         console.log('Hago sonidos porque estoy vivo');
-       }
-       Animal.prototype.saludar = function () {
-         console.log(`Hola me llamo ${this.nombre}`);
-       }
+    class Animal {
+      constructor(nombre, genero) {
+        this.nombre = nombre;
+        this.gemero = genero;
+        this.raza = null;
+      }
+      // metodos agregados al prototipo de la función constructora
+      sonar() {
+        console.log('Hago sonidos porque estoy vivo');
+      }
 
-       //HERENCIA PROTOTÁICA
-       function Perro(nombre,genero,tamanio) {
-          this.super = Animal;
-          this.super(nombre, genero);
-          this.tamanio = tamanio;
-       }
+      saludar() {
+        console.log(`Hola me llamo ${this.nombre}`);
+      }
 
-       //Perro está HEREDANDO DE ANIMAL
-       Perro.prototype = new Animal();
-       Perro.prototype.constructor = Perro();
+      //difinimos método estático
+      static queEres() {
+        console.log('Los perros somos mamíferos que pertenecemos a la familia de los caninos. Somos considerados los mejores amigos del hombre');
+      }
+    }
 
-       //sobreescritura de métodos del Prototipo padre en el hijo
-       Perro.prototype.sonar = function () {
-         console.log('Soy un perro y mi sonido es ladrido');
-       }
-       Perro.prototype.ladrad = function () {
-         console.log('Guau, Guau');
-       }
-
-       const snoopy = new Perro("Snoopy", "Hombre", "Mediano"),
-         lolaBunny = new Animal('Lola Bunny', 'Mujer');
-
-       console.log(snoopy);
-       console.log(lolaBunny);
-
-       snoopy.sonar();
-       snoopy.saludar();
-       snoopy.ladrad();
-
-        lolaBunny.sonar();
-        lolaBunny.saludar(); */
-
-        class Animal{
-          constructor(nombre, genero){
-            this.nombre = nombre;
-            this.gemero = genero;
-            this.raza = null;
-          }
-          // metodos agregados al prototipo de la función constructora
-          sonar(){
-            console.log('Hago sonidos porque estoy vivo');
-          }
-          
-          saludar() {
-            console.log(`Hola me llamo ${this.nombre}`);
-          }
-
-          //difinimos método estático
-          static queEres(){
-            console.log('Los perros somos mamíferos que pertenecemos a la familia de los caninos. Somos considerados los mejores amigos del hombre');
-          }
-        }
-
-        class Perro extends Animal{
-          constructor (nombre, genero, tamanio){
-            super();
-            this.tamanio = tamanio;
-        }
-        sonar(){
-          console.log('soy un perro y mi sonido es un ladrido');
-        }
-        ladrar(){
-          console.log('guau, guauuu!');
-        }
+    class Perro extends Animal {
+      constructor(nombre, genero, tamanio) {
+        super();
+        this.tamanio = tamanio;
+      }
+      sonar() {
+        console.log('soy un perro y mi sonido es un ladrido');
+      }
+      ladrar() {
+        console.log('guau, guauuu!');
+      }
 
 
-        //metodos GETTERS & SETTERS
-       get getRaza(){
-          return this.raza;
-        }
-        set setRaza(raza){
-          this.raza = raza;
-        }
-        }
-        
-        Perro.queEres();
+      //metodos GETTERS & SETTERS
+      get getRaza() {
+        return this.raza;
+      }
+      set setRaza(raza) {
+        this.raza = raza;
+      }
+    }
 
-        const mimi = new Animal ('Mimy', 'Hembra');
-        const scooby = new Perro ('Scooby', 'Macho', 'Gigant');
+    Perro.queEres();
 
-        console.log(mimi);
-        mimi.saludar();
-        mimi.sonar();
-        console.log(scooby);
-        scooby.saludar();
-        scooby.sonar();
-        scooby.ladrar();
-        console.log(scooby.getRaza);
-        scooby.setRaza = 'Gran Danés';
-        console.log(scooby.getRaza);
+    const mimi = new Animal('Mimy', 'Hembra');
+    const scooby = new Perro('Scooby', 'Macho', 'Gigant');
 
-          
- 
- 
- </script>
+    console.log(mimi);
+    mimi.saludar();
+    mimi.sonar();
+    console.log(scooby);
+    scooby.saludar();
+    scooby.sonar();
+    scooby.ladrar();
+    console.log(scooby.getRaza);
+    scooby.setRaza = 'Gran Danés';
+    console.log(scooby.getRaza);
+
+
+
+
+  </script>
 </body>
+
 </html>

@@ -26,21 +26,16 @@
 
 
 
-
   <script>
-
-  let cadena = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, doloribus ad praesentium sint dolorum laudantium iste molestiae consequatur? Asperiores ea aperiam ullam itaque minima non eos dignissimos, nobis impedit voluptas!';
-
-/*   let expReg = new RegExp('lorem', 'ig'); */
-  let expReg2 = /\d/i;
-
-  console.log(expReg.test(cadena));
-  console.log(expReg.exec(cadena));
-  console.log(expReg2.test(cadena));
-  console.log(expReg2.exec(cadena));
-
-
-
+    let cadena = "lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae modi sed asperiores voluptatibus dolores debitis saepe, incidunt a illo iusto eveniet deserunt, ratione, temporibus omnis nam sit voluptates tempora? doloremque lorem Consequatur."
+    
+   // let expReg = new RegExp("lorem", "ig");
+    //  console.log(expReg.test(cadena));
+    //  console.log(expReg.exec(cadena));
+    
+    let expReg2 =/lorem{1,}/ig;
+    console.log(expReg2.test(cadena));
+    console.log(expReg2.exec(cadena));
 
 
 

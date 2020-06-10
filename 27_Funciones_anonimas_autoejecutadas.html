@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funciones Anónimas Autoejecutables</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1em;
+      line-height: 2em;
+      letter-spacing: 0.03em;
+    }
+
+    span {
+      color: darkslategray;
+    }
+  </style>
+</head>
+
+<body>
+  <h3> <strong> Funciones Anónimas Autoejecutables</strong></h3>
+  <p>Se ejecutan al momento de crearlas y no tienen nombre,  </p>
+
+
+
+
+  <script>
+    (function (){
+      console.log('Primer funcion anonnima');
+    })();
+   
+   (function (d, w, c) {
+     console.log('Segunda funcion anonnima');
+     console.log(d);
+     console.log(w);
+     c.log('Este es un console.log');
+    })(document, window, console);
+  
+
+
+  </script>
+</body>
+
+</html>

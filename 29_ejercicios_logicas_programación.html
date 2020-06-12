@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicos Lógica en Programación 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Ejercicos</p>
+    <ul>
+        <li>Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo")
+            devolverá 10.</li>
+        <li>Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe.
+            miFuncion("HolaMundo", 4) devolverá "Hola".</li>
+        <li>Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
+            miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].</li>
+        <li>Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola
+            Mundo Hola Mundo</li>
+    </ul>
+
+
+
+    <script>
+        let numero = 'Hola Mundo';
+        console.log(numero.length);
+
+        let cadena = "Hola Mundo";
+        console.log(cadena.substr(0, 4));
+
+        const palabras = ['Hola', 'que', 'tal'];
+        console.log(palabras);
+
+        const saludo = 'Hola Mundo ';
+        console.log(`${saludo.repeat(3)}`);
+
+
+        //soluciones
+        /* 1 Programa una función que cuente el número de caracteres de una cadena de texto, pe.miFuncion("Hola Mundo")
+            devolverá 10. */
+
+        /* function caracteres(cadena = '') {
+            if (!cadena) {
+                console.warn('la cadena está vacia');
+            } else {
+                console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`);
+            }
+         */
+        const caracteres = (cadena = '') =>
+            (!cadena)
+                ? console.warn('la cadena está vacia')
+                : console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`);
+
+        caracteres('hola mundo');
+
+
+
+        /* 2 Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe.
+                miFuncion("HolaMundo", 4) devolverá "Hola". */
+
+        const recorte = (cadena = '', longitud = undefined) =>
+            (!cadena)
+                ? console.warn('No ingresaste el texto')
+                : (longitud===undefined)
+                    ?console.warn('Ingresa el numero de caracteres a recortar')
+                    :console.info(cadena.slice(0, longitud));
+
+
+        recorte('Hola mundo', 4);
+
+
+
+        /*3 Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.miFuncion('hola que tal', ' ') devolverá['hola', 'que', 'tal']. */
+            const arreglo = (cadena='', separador=undefined)=>
+                (!cadena)
+                    ?console.warn('no ingresaste un texto')
+                    :(separador ===undefined)
+                        ?console.warn('separa la palabra')
+                        :console.info(cadena.split(separador));
+            arreglo('Hola como estas, mi nombre es lucas ', ' ')
+
+
+
+           /*  4 Programa una función que repita un texto X veces, pe.miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo */
+            const repetir = (texto='Lucas', veces= undefined) => {
+                if (!texto) return console.warn('no ingresaste un texto');
+
+                if (veces===undefined) return console.warn('no ingresaste el n de veces a repetir');
+
+                if (veces===0) return console.error('no puedes ingresar 0');
+                
+                if (Math.sign(veces)===-1) return console.warn('El numero a repetir no puede ser negativo');
+
+                for (let i = 1; i <= veces; i++) {
+                    console.info(`${texto}, ${i}`);
+                }
+            }
+
+            repetir('hola mundo', 3);
+
+    </script>
+</body>
+
+</html>

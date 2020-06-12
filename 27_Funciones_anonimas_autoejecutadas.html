@@ -37,6 +37,26 @@
      console.log(w);
      c.log('Este es un console.log');
     })(document, window, console);
+
+    //Versión clásica 
+    (function(){
+      console.log('versión clásica');
+    })();
+
+    //Crockford (JavaScript The God Parts)
+    ((function(){
+      console.log('versión Crockford');
+    })());
+
+    //Version unaria
+    +function (){
+      console.log('Version unaria');
+    }();
+
+    //Facebook
+    !function(){
+      console.log('Versión Facebook');
+    }();
   
 
 

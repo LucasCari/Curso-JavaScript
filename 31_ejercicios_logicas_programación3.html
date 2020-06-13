@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicos Lógica en Programación 3</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <script>
+        /* 9) Programa una función que obtenga un numero aleatorio entre 501 y 600. */
+        const aleatorio = (min = 501, max = 601) => {
+            console.info(Math.round(Math.random() * (min - max)) + max);
+        }
+        aleatorio();
+
+
+
+        /* 10) Programa una función que reciba un número y evalúe si es capicúa o no(que se lee igual en un sentido que en otro), pe.miFuncion(2002) devolverá true. */
+        const capicua = (numb = '') => {
+            if (!numb) return console.warn('No ingresaste un numero');
+            if (typeof numb !== "number") return console.error('Solo ingresa numeros');
+
+            numb = numb.toString();
+            let alReves = numb.split('').reverse().join('');
+
+
+            return (parseInt(numb) === parseInt(alReves))
+                ? console.info(`Si es Capicua,el número original ${numb}, Número al revés ${alReves}`)
+                : console.info(`No es Capicua,el número original ${numb}, Número al revés ${alReves}`);
+        }
+        capicua(212.212);
+
+
+
+
+        /* 11) Programa una función que calcule el factorial de un número(El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe.miFuncion(5) devolverá 120. */
+        const factorial = (numb = undefined) => {
+            if (!numb) return console.warn('No ingresaste un numero');
+            if (typeof numb !== "number") return console.error('Solo ingresa numeros');
+            if (numb === 0) return console.warn('No se puede calcular 0');
+            if (Math.sign(numb) === -1) return console.error('El numero no puede ser negativo')
+
+            let factorial = 1;
+            while (numb > 1) {
+                factorial *= numb;
+                numb--;
+            }
+            console.info(factorial);
+        }
+
+        factorial(6);
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicos Lógica en Programación 3</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <script>
+        /* 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe.miFuncion(100, 2) devolverá 4 base 10. */
+        const convertir = (numb = undefined, base = undefined) => {
+            if (numb === undefined) return console.warn('No ingresaste un numero');
+            if (base === undefined) return console.warn('No ingresaste una unidad');
+            if (typeof numb !== "number") return console.error('Solo ingresa numeros');
+            if (typeof base !== "number") return console.error('No ingresaste una cunidad');
+
+            if (base === 2) {
+                return console.info(`El número ${numb} base ${base} = ${parseInt(numb, base)} base 10`);
+            } else if (base === 10) {
+                return console.info(`El número ${numb} base ${base} = ${(numb.toString(2))} base 2`);
+            }
+        }
+        convertir(101, 2);
+        convertir(4, 10);
+
+
+
+
+
+        /* 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe.miFuncion(1000, 20) devolverá 800. */
+        const descuento = (monto = undefined, desc = 0) => {
+            if (monto === undefined) return console.warn('No ingresaste un numero');
+            if (monto === 0) return console.warn('El monto no puede ser 0');
+            if (Math.sign(monto) === -1) return console.info('No puedes ingresar un numero negativo');
+            if (Math.sign(desc) === -1) return console.info('No puedes ingresar un numero negativo');
+            if (typeof monto !== "number") return console.error('Solo ingresa numeros');
+            if (typeof desc !== "number") return console.error('No ingresaste una cunidad');
+
+            return console.info(`${monto} - ${desc}% de descuento es igual a $ ${monto - (monto * desc / 100)}`);
+        }
+        descuento(100, 25);
+
+
+
+        /* 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe.miFuncion(new Date(1984, 4, 23)) devolverá 35 años(en 2020). */
+        const calcularEdad = (fecha = undefined) => {
+            if (fecha === undefined) return console.warn('No ingresaste un numero');
+            if (!(fecha instanceof Date)) return console.error('Solo puedes ingresar una fecha');
+
+            let fechaMenosHoy = new Date().getTime() - fecha.getTime(),
+                aniosEnMs = 1000* 60* 60 *24* 365
+            aniosHumanos= Math.floor(fechaMenosHoy/ aniosEnMs);
+
+            return (Math.sign(aniosHumanos)=== -1)
+                ?console.info(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}`)
+                :(Math.sign(aniosHumanos)=== 1)
+                    ?console.info(`Han pasado ${aniosHumanos} años desde ${fecha.getFullYear()}`)
+                    :console.info(`Estamos en el mismo año ${fecha.getFullYear()}`)
+        }
+
+        calcularEdad(new Date(1991, 02, 06));
+
+
+    </script>
+</body>
+
+</html>

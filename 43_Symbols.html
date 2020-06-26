@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbols</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Symbols</h1>
+    <p>Nuevos tipos de datos en JS </p>
+
+    <script>
+        //Symbol es un tipo de dato primitivo; una vez que creamos uno su valor se mantiene privado y para uso interno. Como una propiedad para los objetos.
+        //Los símbolos nos permiten crear identificadores únicos, por lo cual si creamos dos variables con el valor asigando Symbol, retornará falso, porque no son iguales.
+        //Dentro del symbol podemos colocarle un identificador, para poder reconocerlo
+        let id = Symbol("id");
+        let id2 = Symbol("id2");
+        console.log(id === id2);
+        console.log(id, id2);
+        console.log(typeof id, typeof id2);
+
+
+        //Sus valores no deberia cambiar, por lo cual deberiamos crearlos con constantes.
+        const NAME = Symbol();
+        const SALUDAR = Symbol();
+
+        const people = {
+            //Cuando realizamos un identificador (symbol) unico dentro de un objeto, debemos realizarlo con [], en consola se imprime como Symbol pero no aparece el nombre de la propiedad, es decir NOMBRE 
+            [NAME]: 'Lucas'
+        };
+        console.log(people);
+
+        people.NAME='Lucas Cari'
+        console.log(people);
+        console.log(people.NAME);
+        console.log(people[NAME]);
+
+        people[SALUDAR]= function() {
+            console.log('hola');
+        }
+        console.log(people);
+
+        people[SALUDAR](); 
+
+        for(let propiedad in people){
+            console.log(propiedad);
+            console.log(people[propiedad]);
+        }
+
+    </script>
+</body>
+
+</html>

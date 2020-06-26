@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronía y event loop</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Asincronia en JS</h1>
+
+
+    <script>
+
+        /*  *Procesamiento Single Thread & Multi Thread::
+                 JS Es single thread, es decir que solo puede realizar una tarea a la vez. Escritura de un solo hilo.  Es dificil realizar una tarea larga sin bloquear el hilo principal de nuestra programación. 
+                 
+         JS Sólo responde una tarea a la vez, en el caso de que sean varias a realizar quedarán en cola y se iran realizando en la modalidad LAST IN FIRST OUT (La última en ingresar es la primera en salir), más conocido como EVENT LOOP  */
+
+        /* *Operaciones de CPU & Operaciones de I / O.
+            Son las operaciones que van a pasar el mayor tiempo consumiendo los recursos de nuestro CPU
+            Operaciones Input (I) OUTPUT(o), Son las que mayormente esperan la validación de una tarea solicitada, por ejemplo cuando realizamos un pago por internet. 
+         */
+
+        /*Operaciones Concurrentes y Paralelas: 
+               CONCURRENTES: Se da cuando dos o más tareas se están ejecutando y avanzando simultaneamente. 
+               PARALELAS: Cuando se ejecutan al mismo tiempo, es decir inician al mismo momento. 
+   
+               Parecen iguales pero no lo son ya que las concurrentes no necesariamente inician juntas, y no PROGRESAN JUNTAS.
+   
+        */
+
+
+        /*  *Operaciones Bloqueantes y NO Bloqueantes.
+             Cada vez que se ejecuta una operación se produce una fase de espera. Según como tome esa fase de espera.
+             Si no devuelve el control de la aplicación al hilo principal hasta que no termine la tarea es Bloqueante. 
+             Si devuelve el control de la aplicación inmediatamente al hilo principal mientras corre la tarea es no bloqueante. 
+         */
+
+
+        /*  *Operaciones Síncronas & Asíncronas::
+                Una operación sincrona espera la respuesta en el momento. 
+                Una operación asíncrona la respuesta sucede en un futuro.  Es decir que no va a esperar el resultado para seguir operando.
+                 */
+
+        /*Código Síncrono Bloqueante */
+        //Se realiza una petición cuando esta es procesada y tiene la respuesta, pasa a la siguiente.
+
+
+        /*JavaScript usa un modelo asíncrono y no bloqueante, con un loop de eventos implementado en un solo hilo (single thread) para operaciones de entrada y salida (input/output). */
+        (() => {
+            console.log('Código Síncrono');
+            console.log('Inicio');
+            //Las funciones son ignoradas hasta que se resuelva lo que está fuera de ellas. En este caso que desencadena la función uno, ésta tiene dentro la function 2, una vez terminada desbloquea el hilo y paas al ConsoleLog FIN se puede comprobar el funcionamiento en ::Herramienta Loupe http://latentflip.com/loupe/
+
+            function dos() {
+                console.log("Dos");
+            }
+
+            function uno() {
+                console.log('Uno');
+                dos();
+                console.log('Tres');
+            }
+
+            uno();
+            console.log('FIN');
+
+        })();
+
+        console.log('*************');
+
+        /*Código Asíncrono NO Bloqueante */
+        (() => {
+            console.log('Código Asíncrono');
+            console.log('Inicio');
+
+            function dos() {
+                setTimeout(function () {
+                    console.log('Dos')
+                }, 1000);
+            }
+
+            function uno() {
+                setTimeout(function () {
+                    console.log('Uno')
+                }, 0);
+                dos();
+                console.log('Tres');
+            }
+
+            uno();
+            console.log('FIN');
+
+        })();
+
+
+
+
+    </script>
+</body>
+
+</html>

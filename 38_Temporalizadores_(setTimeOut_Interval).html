@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicos Lógica en Programación 9</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Asincronia en JS</h1>
+
+
+    <script>
+
+        //Ejecutamos una función en el tiempo que le indicamos al Time Out
+       setTimeout(() => {
+          /*  console.log('Ejecutanto Set Time Out, Esto se ejecuta una sola vez en el timepo indicado'); */
+       }, 1000);
+       
+
+       //Ejecutamos la función cada X tiempo indicado.
+       setInterval(() => {
+          /*  console.log('Ejecutando un Interval cada 1 segundo, se ejecuta indefinidamente cada sierto intervalo de tiempo'); */
+       }, 3000);
+
+
+     let temporizador = setTimeout(() => {
+         console.log(new Date().toLocaleTimeString());
+     }, 1000);
+     //Para cancelar un TimeOut el mismo debe estar dentro de una Variable...
+     clearTimeout(temporizador);
+
+
+     let temporalizador = setInterval(() => {
+         console.log(new Date().toLocaleTimeString());
+     }, 1000);
+     //Para cancelar un TimeOut el mismo debe estar dentro de una Variable...
+     clearTimeout(temporalizador);
+     console.log('Despues del setInterval')
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

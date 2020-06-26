@@ -60,6 +60,9 @@
 
 
   <script>
+    /* Si declaramos una constante con valore sprimitivos no podremos modificar el valor. 
+    Peo si lo hacemos declaramos una constante con valores compuestos, como array, object, function, si podremos modificar el contenido. (agregar, quitar, etc.)
+ */
     const PI = 3.1416;
     console.log(PI);
 
@@ -73,11 +76,14 @@
     console.log(objeto);
     console.log(colores);
 
+//agregamos nuevos valores objeto y colores, estos siguen siendo los mismos, aunque tengan más o menos elementos.. 
     objeto.correo = 'ejemplo@ejemplo',
-      colores.push('naranja');
+    colores.push('naranja');
 
     console.log(objeto);
     console.log(colores);
+
+  // Si a lo largo del flujo de trabajo de nuestra variable su naturaleza va a cambiar (es decir que puede cambiar de array a object) debemos declararlo con LET, en el caso que se mantenga fija su naturaleza, auunque su contenido pueda cambiar con mas o menos elementos, la declaración debe ser con const.
 
   </script>
 </body>

@@ -24,9 +24,9 @@
     <p>Nuevos tipos de datos en JS </p>
 
     <script>
-        //Symbol es un tipo de dato primitivo; una vez que creamos uno su valor se mantiene privado y para uso interno. Como una propiedad para los objetos.
-        //Los símbolos nos permiten crear identificadores únicos, por lo cual si creamos dos variables con el valor asigando Symbol, retornará falso, porque no son iguales.
-        //Dentro del symbol podemos colocarle un identificador, para poder reconocerlo
+       /*  Symbol es un tipo de dato primitivo; una vez que creamos uno su valor se mantiene privado y para uso interno. Como una propiedad para los objetos.
+        Los símbolos nos permiten crear identificadores únicos, por lo cual si creamos dos variables con el valor asigando Symbol, retornará falso, porque no son iguales.
+        Dentro del symbol podemos colocarle un identificador, para poder reconocerlo */
         let id = Symbol("id");
         let id2 = Symbol("id2");
         console.log(id === id2);
@@ -40,11 +40,12 @@
 
         const people = {
             //Cuando realizamos un identificador (symbol) unico dentro de un objeto, debemos realizarlo con [], en consola se imprime como Symbol pero no aparece el nombre de la propiedad, es decir NOMBRE 
-            [NAME]: 'Lucas'
+            [NAME]: 'Lucas',
+            edad: 35
         };
         console.log(people);
 
-        people.NAME='Lucas Cari'
+        people.NAME='Lucas Cari',
         console.log(people);
         console.log(people.NAME);
         console.log(people[NAME]);
@@ -60,6 +61,8 @@
             console.log(propiedad);
             console.log(people[propiedad]);
         }
+
+        console.log(Object.getOwnPropertySymbols(people));
 
     </script>
 </body>

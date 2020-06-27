@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Maps</h1>
+    <p>Estan dentro de la categoria de valores complejos. <br>
+    Son mas Similares a los objetos</p>
+
+    <script>
+        // Las utilizamos para almacernar conjuntos de calores asociados a manera de objetos. Similares a un objeto primitivo. Nos permite tener llave + valor del objeto.
+
+
+        const mapa = new Map();
+        mapa.set('Nombre', 'Lucas');
+        mapa.set('Apellido', 'Cari');
+        mapa.set('Edad', 29);
+
+        console.log(mapa);
+        console.log(mapa.size);
+        //Con HAS tambien comprobamos si existe el dato o no
+        console.log(mapa.has('correo'));
+        console.log(mapa.has('Nombre'));
+        //utilizamos GET, para impimir el valor de la propiedad que deseamos.
+        console.log(mapa.get("Nombre"));
+        //Establecemos un nuevo valor a una propiedad ya establecida con el metodo GET
+        mapa.set('Nombre', 'Lucas Federico Cari');
+        console.log(mapa.get('Nombre'));
+        //Elimino un elemento del mapa
+        mapa.delete('Apellido');
+        //A diferencia de un objeto primitivo nosotros podemos generar llaves y valores que no sean cadenas de texto, cómo por ejempli números, o tipos diferentes de datos
+        mapa.set(19, 'Diecinueve');
+        mapa.set(false, 'falso');
+        mapa.set({}, {});
+        console.log(mapa);
+
+        for (let [key, value] of mapa) {
+            console.log(`Llave: ${key}, Valor: ${value}`);
+        }
+
+        //Podemos utilizar la estructura de un const normal pero cada [llave y valor] debe ir dentro de un corchete.
+        const mapa2 = new Map([
+            ['Nombre', 'Ciro Martin'],
+            ['Edad', 7],
+            ['mail', 'none'],
+            [null, 'nulo']
+        ]);
+        console.log(mapa2);
+
+        //Separamos las llaves de sus valores.
+        const llavesMapa2 = [...mapa2.keys()];
+        const valoresMapa2 = [...mapa2.values()];
+
+        console.log(llavesMapa2);
+        console.log(valoresMapa2);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterables & Iterators</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Iterables & Iterators</h1>
+    <p>lorem</p>
+    <p>lorem</p>
+    <p>lorem</p>
+
+    <script>
+        //iterable es el elemento el cual su contenido se puede recorrer, iterador es el apuntador que lo recorre los elementos.
+        const iterable = 'Hola mundo';
+       /* 
+        const iterable = [1,2,3,4,5];
+        const iterable = new Set ([1,2,3,4,5, true, false, false]);
+        const iterable = new Map([
+            ['Nombre', 'Ciro Martin'],
+            ['Edad', 7]
+        ]); */
+
+        //a través de symbol.iterator accedemos al iterador del iterable.
+        const iterador = iterable[Symbol.iterator]();
+
+        console.log(iterable);
+        console.log(iterador);
+
+       /*  //imprimimos el recorrido, {value: 1 done: false} siempre se imprime en forma de objeto, {Value: 1 ==> indica el valor d ela primer posisión}, {done: false indica hay mas elementos.}
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        //cuando ya no hay mas elementos para recorrer idicará  {value: undefined, done: true}
+        console.log(iterador.next()); */
+
+        console.warn('Realizamos la operación a través de un ciclo');
+
+        let next = iterador.next();
+
+        while(!next.done){
+            console.log(next.value);
+            next = iterador.next();
+        }
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This</h1>
+
+
+    <script>
+        //THIS hace referencia al objeto global, es decir al window
+        console.log(this);
+        console.log(window);
+        console.log(this === window);
+
+        this.nombre = 'Contexto Global';
+        console.log(this.nombre);
+
+        //Se imprime en el objeto Global, es decir en window
+        function imprimir() {
+            console.log(this.nombre);
+        }
+
+        imprimir();
+
+
+        //THIS se sitúa dentro de obj2, por lo tanto se imprime dentro del {Bloque} obj2
+        const obj = {
+            nombre: 'Contexto bloque Objeto',
+            imprimir: function () {
+                console.log(this.nombre);
+            }
+        }
+        obj.imprimir();
+
+        //THIS se sitúa dentro de obj2, por lo tanto se imprime dentro del {Bloque} obj2
+        const obj2 = {
+            nombre: 'Contexto bloque objeto 2',
+            imprimir
+        }
+        obj2.imprimir();
+
+        //Utilizando ()=>{} mantenemos un elance con el contecto donde ha sido creado el objeto donde aparece, es decir WINDOW. Es decir hereda el scoope del Padre.
+        const obj3 = {
+            nombre: 'Contexto bloque Objeto 3',
+            imprimir: ()=> {
+                console.log(this.nombre);
+            }
+        }
+        obj3.imprimir();
+
+        function People(nombre) {
+            this.nombre = nombre;
+           // return console.log(this.nombre);
+           //En este caso la ArrowFunction hereda el contexto del padre PEOPLE y sus valores. Si utilizamos una function anonima,  function(){}; heredará el entorno Global. 
+           return () => console.log(this.nombre);
+        }
+        let lucas = new People('Lucas');
+        lucas();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

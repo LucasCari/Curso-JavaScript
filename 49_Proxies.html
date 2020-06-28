@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxies</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Proxies</h1>
+
+
+    <script>
+    //Es un nuevo mecanismo de JS que permite crean un objeto basado en un OBJETO LITERAL INICIAL, como por ejemplo las clases y las nuevas instacias que heredan las instacias anteriotes.
+    const people = {
+        nombre: '',
+        apellido: '',
+        edad: 0
+    }
+
+    const manejador = {
+        //SET es el parámetro por defecto de nuestro manejador, en el podremos establecer todas las validaciones que necesitemos. Hará que no se modifique la estructura de los datos originales (people)
+        set(obj, prop, valor){
+            //Buscamos en el OBJ que todas las propiedades se encuentren en el objeto original y lo bloqueamos.
+            if (Object.keys(obj).indexOf(prop) === -1) {
+                return console.error(`La propiedad '${prop}' no existe en el objeto people`)
+            }
+
+            //validamos que solo se ingresen letras y espacios en blanco 
+            if(
+                (prop === 'nombre' || prop=== 'apellido') && !(/^[A-Za-zÑñAáÉéÍiÓóÚuÜü\s]+$/g.test(valor))
+            ){
+                return console.error(`La propiedad '${prop} 'solo acepta letras y espacios`);
+            }
+            //al objeto Lucas, le asignamos la propiedad [nombre, apellido, edad] y su valor
+            obj[prop]= valor;
+        }
+    }
+
+    const lucas = new Proxy(people, manejador)
+    lucas.nombre = 'Lucas Federico';
+    lucas.apellido = 'Cari';
+    lucas.edad = 29;
+    lucas.twiter = "@LucasCari";
+
+    console.log(lucas);    
+    //Con proxy mantenemos una vinculación entre el objeto original y el nuevo es decir que si modificamos un elemento dentro de la nueva variable, el valor se modificará en todas. Para evitarlo colocaremos una condición.  
+    console.log(people);
+    
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

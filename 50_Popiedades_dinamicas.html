@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Dinámicas.</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Propiedades Dinámicas.</h1>
+
+
+    <script>
+        //iniciamos el objeto vacío
+        let aleatorio = Math.round(Math.random() * 100 + 5);
+        const objUsuarios ={
+            propiedad: 'valor',
+            [`id_${aleatorio}`]: 'valor aleatorio'
+        };
+        console.log(objUsuarios);
+
+        const usuarios = ['Lucas', 'Federico', 'Ciro', 'Martin'];
+        //Asignamos los valores a través del forEach() y generamos la posicion del usuario.
+        usuarios.forEach((usuario, index)=>objUsuarios[`id - ${index}`] = usuario);
+
+        console.log(objUsuarios);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

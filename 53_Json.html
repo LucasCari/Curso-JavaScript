@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JSON:: JavaScript Object Notation</h1>
+
+
+    <script>
+        //JSON es un formato ligero de intercambio de datos. Funciona como un traductor entre dos lenguajes diferentes. Es decir, si trabajamos una pagina que esta en php y devemos enviar información a otra (un pago**) que está en phyton. JSON hace de traductor para que ambos lenguajes puedan compartirse información. 
+
+        //JSON es el modelo standard en de soporte entre lenguajes, hoy en día todos los lenguajes deben tener soporte en JSON 
+
+        const json = {
+            cadena: 'Lucas',
+            numero: 35,
+            boolenao: true,
+            arreglo: ['correr', 'saltar', 'volar'],
+            objeto: {
+                twiter: '@LucasCari',
+                email: 'lucasfedericocari@gmail.com'
+            },
+            nulo: null
+        }
+        console.log(json);
+
+        //En JSON todas las propiedades y valores deben ir entre comillas dobles, y {   } como apertura y cierre.
+        /* {
+            "cadena": "Lucas",
+            "numero": "35",
+            "boolenao": "true",
+            "arreglo": ["Correr", "Saltar", "Volar"],
+            "objeto": {
+                "twiter": "@LucasCari",
+                "email": "lucasfedericocari@gmail.com"
+            },
+            "nulo": null
+        } */
+
+        console.log(JSON);
+        console.warn('Parse:: Analiza una anotacion JSON, es decir una cadena de texto y la convierte en un tipo de dato que JavaScript valide objeto, numero, arreglo, etc...');                
+        //imprime en forma de objeto
+        console.log(JSON.parse("{}"));
+        //imprimimos solo como cadena de texto
+        console.log("{}");
+
+        //imprime en forma de arreglo.
+        console.log(JSON.parse("[1,2,3]"));
+        //imprimimos solo como cadena de texto
+        console.log("[1,2,3]");
+
+        console.log(JSON.parse('{"cadena": "Lucas","numero": "35","boolenao": "true","arreglo": ["Correr", "Saltar", "Volar"],"objeto": {"twiter": "@LucasCari","email": "lucasfedericocari@gmail.com"},"nulo": null}'))
+
+        console.warn('Stringify:: Convierte un objeto o valor valido en JavaScript a cadena de texto valida en JSON')
+        
+
+        console.log(JSON.stringify(50));
+        console.log(JSON.stringify(true));
+        console.log(JSON.stringify(null));
+        console.log(JSON.stringify(undefined));
+        console.log(JSON.stringify([1,2,3]));
+        console.log(JSON.stringify({x:2, y:3}));
+        console.log(JSON.stringify(json));
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

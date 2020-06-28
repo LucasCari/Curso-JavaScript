@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakSets & WeakMaps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WeakSets & WeakMaps</h1>
+    <p></p>
+    
+    <script>
+        //Solo pueden almacenar referencias debiles, las llaves deben ser de tipo objeto. Al ser débiles, le permite al recolector de basura de JS que en el momento que alguna de las referencias débiles se haya nulificado o perdido su valor. Así mismo no podemos utilizar todas las funciones que con el los MAPS y SETs normales.
+        
+        //Con WeakSet debemos añadir los parametros con .add()
+        const ws = new WeakSet();
+        //Las llaves deven estar dentro de una variable y referenciadas como Arreglos. 
+        let valor1 = { 'valor1': 1 };
+        let valor2 = { 'valor2': 2 };
+        let valor3 = { 'valor3': 3 };
+
+        ws.add(valor1);
+        ws.add(valor2);
+        console.log(ws);
+
+        ws.delete(valor2);
+        console.log(ws);
+
+        ws.add(valor2);
+        ws.add(valor3);
+        console.log(ws);
+
+        /* setInterval(() => console.log(ws), 0); */
+
+
+        //Comprobamos que al momento de que el valor de las variables es nulo se dejan de imprimir y se borran automáticamente.
+       /*  setTimeout(() => {
+            valor1 = null;
+            valor2 = null;
+            valor3 = null;
+        }, 0); */
+
+        console.warn('Weak Maps');
+        const wm = new WeakMap();
+        //Las llaves deven estar dentro de una variable y referenciadas como objetos. 
+        let llave1 = {};
+        let llave2 = {};
+        let llave3 = {};
+
+        wm.set(llave1, 1);
+        wm.set(llave2, 2);
+        console.log(wm);
+
+        console.log(wm.has(llave1));
+        console.log(wm.has(llave3));
+
+        wm.set(llave3, 3);
+        console.log(wm);
+        
+        wm.delete(llave2);
+        console.log(wm);
+
+        console.log(wm.get(llave1));
+        console.log(wm.get(llave2));
+        console.log(wm.get(llave3));
+
+        /* setInterval(() => console.log(wm), 1000);
+
+        setTimeout(() => {
+            llave1 = null;
+            llave2 = null;
+            llave3 = null;
+        }, 2000); */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call, apply, bind</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>call, apply, bind</h1>
+    
+    
+    <script>
+        console.warn('Call & Apply');
+        this.lugar = 'Contexto Global';
+
+        function saludar(saludo, aQuien) {
+            console.log(`${saludo} ${aQuien} desde el ${lugar}`);
+        }
+        saludar('Hola', 'Lucas');
+
+        const obj = {
+            lugar: 'Contexto bloque Obj'
+        }
+        //Con la función CALL && APPLY, nosotros le indicamos sobre que variable se ejecuta la function, la diferencia es como recibe los paremetros desde el contexto en el que estamos trabajando.
+
+        //Call recibe texto
+        saludar.call(obj, "Hola", "Ciro");
+        //Si reemplazamos OBJ por null se regresa al objeto principal (window).
+        saludar.call(null, "Hola", "Ciro");
+        //Apply recibe un arreglo.
+        saludar.apply(obj, ['Adiós', 'Ciro']);
+        //Si reemplazamos OBJ por null se regresa al objeto principal (window).
+        saludar.apply(null, ['Adiós', 'Ciro']);
+
+        console.warn('bind');
+
+        const persona = {
+            nombre: 'Lucas',
+            saludar: function () {
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+        const persona2 = {
+            nombre: 'Ciro',
+            saludar: function () {
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+        persona.saludar();
+        persona2.saludar();
+
+        const otherPeople = {
+            //Bind enlaza el contexto de la variable que nosotros le indiquemos en este caso persona2 
+            saludar: persona.saludar.bind(persona2)
+        }
+        otherPeople.saludar();
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

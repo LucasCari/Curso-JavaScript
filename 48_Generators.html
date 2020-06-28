@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generators</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 2em;
+            letter-spacing: 0.03em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Generators</h1>
+
+
+    <script>
+        //Es una funcion que nos permite trabajar de una manera mas amigable con la interfase de los iteradores en un elemento iterable
+
+        //El * le indica a JS que esto es un generator 
+        function* iterable() {
+            //yield es el RETURN de las generator function
+            yield 'hola';
+            console.log('hola consola');
+            yield 'hola 2';
+            console.log('Seguimos con mas instrucciones de nuestro código');
+            yield 'hola 3';
+            yield 'hola 4';
+        }
+        let iterador = iterable();
+
+        for (let y of iterador) {
+            console.log(y);
+        }
+
+        //guardamos los valores en un nuevo arreglo utilizando express operator
+        const arr = [...iterable()];
+        console.log(arr);
+
+        console.warn('Async with generations functions');
+
+        function cuadrado(valor) {
+            setTimeout(() => {
+                return console.log({ valor, resultado: valor * valor })
+            }, Math.random() * 1000);
+        }
+
+        function* generador() {
+            console.log('Inicia generador');
+            //iniciamos cuadrado con un valor de 0
+            yield cuadrado(0);
+            yield cuadrado(1);
+            yield cuadrado(2);
+            yield cuadrado(3);
+            yield cuadrado(4);
+            yield cuadrado(5);
+            console.log('Termina generador');
+        }
+
+        let gen = generador();
+
+        for (let y of gen) {
+            console.log(y);
+        }
+        // la asincronia es no bloqueante.
+
+
+
+
+    </script>
+</body>
+
+</html>

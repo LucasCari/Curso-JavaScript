@@ -1,0 +1,11 @@
+        {
+            "cadena": "Lucas",
+            "numero": "35",
+            "boolenao": "true",
+            "arreglo": ["Correr", "Saltar", "Volar"],
+            "objeto": {
+                "twiter": "@LucasCari",
+                "email": "lucasfedericocari@gmail.com"
+            },
+            "nulo": null
+        }

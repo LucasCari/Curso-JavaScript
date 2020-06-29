@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM: Estilos & Variables en CSS</title>
+    <style>
+        /*Con ROOT generamos variables css*/
+        :root{
+            --yellow-color: #F7DF1E;
+            --dark-color: #222;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            line-height: 1, 5em;
+            letter-spacing: 0.03em;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        nav ul li {
+            font-size: 1.3em;
+        }
+
+        span {
+            color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM: Atributos y Data-Attributes </h1>
+    <h2>DOM: Document Object Model</h2>
+    <p>Manipulación del HTML a través de JAVASCRIPT</p>
+
+    <h2>CSSOM: CSS Object Model</h2>
+    <p>Manipulación del CSS a través de JAVASCRIPT</p>
+
+    <h2>BOM: Browser Object Model</h2>
+    <p>Nos permitirá visualizar toda la información útil que necesitamos del usuario</p>
+
+    <h2>WEB API´s</h2>
+    <nav>
+        <ul>
+            <li>Eventos</li>
+            <li>Forms</li>
+            <li>Ajax - Fetch</li>
+            <li>History</li>
+            <li>Web Storage</li>
+            <li>Geolocation</li>
+            <li>Drag & Drop</li>
+            <li>Indexed DB</li>
+            <li>Canvas</li>
+            <li>MatchMedia</li>
+            <li>etc..</li>
+        </ul>
+    </nav>
+    <br>
+    <hr> <br>
+    <h3>Manejo del DOM</h3>
+    <p id="que-es">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus iusto mollitia atque aliquam. Numquam amet et
+        facere ipsa recusandae hic, nulla consequuntur ducimus tenetur, enim consectetur fugiat accusamus aliquam ab.
+    </p>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="#">Section 1</a></li>
+            <li><a href="#">Section 2</a></li>
+            <li><a href="#">Section 3</a></li>
+            <li><a href="#">Section 4</a></li>
+            <li><a href="#">Section 5</a></li>
+        </ul>
+    </nav>
+
+    <input type="text" name="nombre" placeholder="nombre">
+    <a class="link-dom" href="58_Estilos_variables_en_CSS.html" style="background-color: #f7df1e; color: #222;" data-id='1' data-description="Document Objetc Model">DOM</a>
+
+    <section class="cards">
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/tech" alt="tech">
+            <filecaption>Tech</filecaption>
+        </figure>
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/animals" alt="Animals">
+            <filecaption>Animals</filecaption>
+        </figure>
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/people" alt="People">
+            <filecaption>People</filecaption>
+        </figure>
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/arch" alt="Arch">
+            <filecaption>Arch</filecaption>
+        </figure>
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/nature" alt="Nature">
+            <filecaption>Nature</filecaption>
+        </figure>
+    </section>
+
+    <script src="./JS/58_Estilos_variables_en_CSS.js"></script>
+</body>
+
+</html>

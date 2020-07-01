@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM: Modificando Elementos (old School)</title>
+    <title>DOM: Manejadores Eventos</title>
     <style>
         /*Con ROOT generamos variables css*/
         :root {
@@ -50,7 +50,7 @@
 </head>
 
 <body>
-    <h1>DOM: Modificando Elementos (old School)</h1>
+    <h1>DOM: Manejadores Eventos</h1>
     <h2>DOM: Document Object Model</h2>
     <p>Manipulación del HTML a través de JAVASCRIPT</p>
 
@@ -95,8 +95,8 @@
     </nav>
 
     <input type="text" name="nombre" placeholder="nombre">
-    <a class="link-dom" href="64_DOM_Modificacion_Elementos.html" style="background-color: #f7df1e; color: #222;" data-id='1'
-        data-description="Document Objetc Model">DOM</a>
+    <a class="link-dom" href="66_DOM_Manejadores_Eventos.html" style="background-color: #f7df1e; color: #222;"
+        data-id='1' data-description="Document Objetc Model">DOM</a>
 
     <section class="cards">
         <figure class="card">
@@ -127,7 +127,17 @@
         </figure>
     </template>
 
-    <script src="./JS/64_DOM_Modificacion_Elementos.js"></script>
+    <h3>Eventos en JS </h3>
+    <h4>Manejadores de Eventos</h4>
+    <!-- Evento con atributo no es recomendado-->
+    <button onclick="holaMundo()">Evento como atributo HTML</button> 
+    <br> <br>
+    <button id='evento-semantico'>Evento con manejador semántico</button>
+    <br> <br>
+    <!-- Recomendado-->
+    <button id="evento-multiple">Evento con manejador múltiple</button>
+
+    <script src="./JS/66_DOM_Manejadores_Eventos.js"></script>
 </body>
 
 </html>
